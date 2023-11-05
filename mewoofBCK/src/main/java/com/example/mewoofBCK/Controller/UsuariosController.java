@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("usuarios")
@@ -36,6 +37,11 @@ public class UsuariosController {
     @PostMapping("crearUsuario")
     public Usuarios crearUsuario(@RequestBody Usuarios usuario){
         return usuariosService.crearUsuario(usuario);
+    }
+
+    @PutMapping("actualizarUsuario")
+    public Optional<Usuarios> actualizarUsuario(@RequestBody Usuarios usuarioModificado){
+        return usuariosService.actualizarUsuario(usuarioModificado);
     }
 
     @DeleteMapping("eliminarUsuario/{id}")

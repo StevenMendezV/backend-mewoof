@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuariosService {
@@ -37,9 +38,24 @@ public class UsuariosService {
         usuariosRepository.deleteById(id);
     }
 
-    /*public Usuarios actualizarUsuario(int id, Usuarios usuarioModificado){
-        return this.usuariosRepository.findById(id).map(personaActual -> {
-            personaActual.
-        })
-    }*/
+    public Optional<Usuarios> actualizarUsuario(Usuarios usuarioModificado){
+
+        if (obtenerUsuarioPorId(usuarioModificado.getId()) != null){
+
+            return this.usuariosRepository.findById(usuarioModificado.getId()).map(personaActual -> {
+                personaActual.setNombre(usuarioModificado.getNombre());
+                personaActual.setApellido(usuarioModificado.getApellido());
+                personaActual.setTelefono(usuarioModificado.getTelefono());
+                personaActual.setPais(usuarioModificado.getPais());
+                personaActual.setCiudad(usuarioModificado.getCiudad());
+                personaActual.setEmail(usuarioModificado.getEmail());
+                personaActual.setAbout(usuarioModificado.getAbout());
+                personaActual.setTipo(usuarioModificado.getTipo());
+
+                return usuariosRepository.save(personaActual);
+                });
+        } else {
+            return null;
+        }
+    }
 }
