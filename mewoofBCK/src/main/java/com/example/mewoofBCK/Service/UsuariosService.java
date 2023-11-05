@@ -27,7 +27,11 @@ public class UsuariosService {
     }
 
     public Usuarios obtenerUsuarioPorEmail(String email){
-        return usuariosRepository.findByEmail(email);
+        if(usuariosRepository.findByEmail(email) == null){
+            return null;
+        }else{
+            return usuariosRepository.findByEmail(email);
+        }
     }
 
     public Usuarios crearUsuario(Usuarios usuario){
