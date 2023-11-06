@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("mascotas")
@@ -31,6 +32,11 @@ public class MascotasController {
     @PostMapping("crearMascota")
     public Mascotas crearMascota(@RequestBody Mascotas mascota){
         return mascotasService.crearMascotas(mascota);
+    }
+
+    @PutMapping("/actualizarMascota")
+    public Optional<Mascotas> actualizarMascota(Mascotas mascota){
+        return mascotasService.actualizarMascota(mascota);
     }
 
     @DeleteMapping("eliminarMascota/{id}")
