@@ -41,4 +41,6 @@ public class Mascotas {
     @OneToOne
     @JoinColumn(name = "id_necesidad_tiempo")
     private NecesidadesTiempo necesidadTiempo;
+    @Column(name = "esterilizacion")
+    private Boolean Esterilizado;
 }
