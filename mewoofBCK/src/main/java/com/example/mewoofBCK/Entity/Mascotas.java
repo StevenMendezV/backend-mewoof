@@ -36,9 +36,9 @@ public class Mascotas {
     @JoinColumn(name = "ID_Estado_Adopcion")
     private EstadosAdopcion estadoAdopcion;
     @OneToOne
-    @JoinColumn(name = "ID_NecesidadDinero")
+    @JoinColumn(name = "id_necesidad_dinero")
     private NecesidadesDinero necesidadDinero;
     @OneToOne
-    @JoinColumn(name = "ID_NecesidadTiempo")
+    @JoinColumn(name = "id_necesidad_tiempo")
     private NecesidadesTiempo necesidadTiempo;
 }

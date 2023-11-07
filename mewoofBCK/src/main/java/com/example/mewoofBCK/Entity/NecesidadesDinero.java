@@ -11,8 +11,8 @@ import lombok.Setter;
 public class NecesidadesDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_NecesidadDinero")
+    @Column(name = "id_necesidad_dinero")
     private Integer id;
-    @Column(name = "Descripcion")
+    @Column(name = "descripcion")
     private String descripcion;
 }

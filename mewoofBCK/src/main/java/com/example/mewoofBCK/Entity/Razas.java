@@ -19,6 +19,6 @@ public class Razas {
     @Column(name = "Raza")
     private String raza;
     @OneToOne
-    @JoinColumn(name = "ID_NecesidadEspacio")
+    @JoinColumn(name = "id_necesidad_espacio")
     private NecesidadesEspacio necesidadEspacio;
 }
