@@ -18,4 +18,7 @@ public class Razas {
     private Especies especie;
     @Column(name = "Raza")
     private String raza;
+    @OneToOne
+    @JoinColumn(name = "ID_NecesidadEspacio")
+    private NecesidadesEspacio necesidadEspacio;
 }
