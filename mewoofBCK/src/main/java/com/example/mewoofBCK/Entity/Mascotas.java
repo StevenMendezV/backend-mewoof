@@ -39,6 +39,6 @@ public class Mascotas {
     @JoinColumn(name = "ID_NecesidadDinero")
     private NecesidadesDinero necesidadDinero;
     @OneToOne
-    @JoinColumn(name = "ID_NecesidadEspacio")
+    @JoinColumn(name = "ID_NecesidadTiempo")
     private NecesidadesTiempo necesidadTiempo;
 }

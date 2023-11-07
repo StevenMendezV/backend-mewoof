@@ -1,11 +1,14 @@
 package com.example.mewoofBCK.Entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
+@Table(name = "necesidades_espacio")
 public class NecesidadesEspacio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
